@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="icon" href="/img/favicon.png" type="image/x-icon" />
+<title>Employee List Page</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div th:insert="~{components/navbar.html}"></div>
+
+	<div class="container">
+		<div class="row">
+			<div
+				class="mt-5 mb-5 col-12 d-flex justify-content-center display-6 text-secondary">
+				Employee List Table</div>
+			<div class="col-12 d-flex justify-content-center mt-5 mb-5">
+
+				<table class="table">
+					<thead>
+						<tr>
+
+							<th scope="col">Sr.No</th>
+							<th scope="col">Name</th>
+							<th scope="col">Age</th>
+							<th scope="col">Phone</th>
+							<th scope="col">Address</th>
+							<th scope="col">Designation</th>
+							<th scope="col">User Name</th>
+							<th scope="col">Password</th>
+							<th scope="col">Action</th>
+
+						</tr>
+					</thead>
+					<tbody th:each="emp,count : ${empList}">
+						<tr>
+
+							<td th:text="${count.count}"></td>
+							<td th:text="${emp.empname}"></td>
+							<td th:text="${emp.age}"></td>
+							<td th:text="${emp.phone}"></td>
+							<td th:text="${emp.address}"></td>
+							<td th:text="${emp.designation}"></td>
+							<td th:text="${emp.username}"></td>
+							<td><input type="password" th:value="${emp.password}"
+								style="border : none;"></td>
+							<td><a th:href="@{/update/{id}(id=${emp.id})}"><button
+										class="btn btn-primary text-white">Edit</button></a> <a
+								th:href="@{/delete/{id}(id=${emp.id})}"><button class="btn btn-danger text-white">Delete</button></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div th:insert="~{components/footer.html}"></div>
+</body>
+</html>

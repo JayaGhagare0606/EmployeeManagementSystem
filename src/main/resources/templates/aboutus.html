@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="icon" href="/img/favicon.png" type="image/x-icon" />
+<title>AboutUs</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div th:insert="~{components/navbar.html}"></div>
+
+	<div class="container">
+		<div class="card">
+			<div class="card-header text-center bg-dark text-light display-4">
+				Info About Company</div>
+			<div class="card-body text-center">
+				<h5 class="card-title">Employee Service Pvt. Ltd.</h5>
+				<p class="card-text">We Are Here to help you . We Will take care
+					of your employee details with Security 🤔</p>
+				<a href="/landing" class="btn btn-primary">Go To Home Page</a>
+			</div>
+		</div>
+
+	</div>
+	<div th:replace="~{components/footer.html}"></div>
+</body>
+</html>
